@@ -3,13 +3,13 @@
 * 安装node.js
     * 方法1：去[nodejs官网](https://nodejs.org/en/)下载最新版nodejs安装
     * 方法2：用NVM安装
-        * curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+        * `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash`
 
 * 安装solana-web3，参考[这里](https://github.com/solana-labs/solana-web3.js)
-    * npm install @solana/web3.js
+    * `npm install @solana/web3.js`
 
 ## Connection
-Connection对象是与合约交互的核心， [API 文档](https://solana-labs.github.io/solana-web3.js/classes/connection.html)
+Connection对象是与合约交互的核心，所有交互都要通过Connection对象完成。[API 文档](https://solana-labs.github.io/solana-web3.js/classes/connection.html)
 
 ```
 let endpoint = 'https://api.devnet.solana.com'
@@ -36,7 +36,7 @@ connectionConfig的commitment，指定了查询时，只返回指定状态的块
 Connection的大部分方法是异步的，需要用Promise来获取返回的结果。
 
 以下是查询钱包里SOL的余额的代码：
-```
+```JavaScript
 ;(async () => {
     let pubkey = new PublicKey('FbemVRsmZCtY6cHb3rwVXtypoe37vkbMWsGgzhJhhFQK')
     let balance = await conn.getBalance(pubkey)
@@ -51,7 +51,7 @@ Connection的大部分方法是异步的，需要用Promise来获取返回的结
 
 conn提供了查询SOL和SPL Token流通量的接口：getSupply/getTokenSupply.
 其中getSupply还有流通量和非流通量的数据：
-```
+```JavaScript
     console.log('SOL 流通情况：')
     var { value: { circulating, nonCirculating } } = await conn.getSupply()
     console.log(`流通中 ${circulating/1e9}\n非流通 ${nonCirculating/1e9}`)
@@ -62,14 +62,16 @@ conn提供了查询SOL和SPL Token流通量的接口：getSupply/getTokenSupply.
 ```
 
 有两个点值得注意：
-1. 我在显示流通量数据时，除以了10e9。
+1, 我在显示流通量数据时，除以了10e9。
 
 这是因为SOL的精度是小数位9位，而链上的数据都是整数，所以显示时要做一下转换。
 
-2. SRM的公钥这么一长串，非常的不友好，有没有更好的管理方法？
+2, SRM的公钥这么一长串，非常的不友好，有没有更好的管理方法？
 
 答案是有的，Solana社区维护了一个Token List，地址：
+
 https://github.com/solana-labs/token-list
+
 该数据库里有Solana链上主流Token的地址、精度和名称等信息。可以基于这些信息封装一个更友善的Token管理库。
 
 
