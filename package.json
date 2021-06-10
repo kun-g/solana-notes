@@ -1,0 +1,26 @@
+{
+  "name": "solana-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@solana/spl-token": "^0.1.5",
+    "@solana/web3.js": "^1.17.0",
+    "axios": "^0.21.1",
+    "bignumber.js": "^9.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kun-g/solana-notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kun-g/solana-notes/issues"
+  },
+  "homepage": "https://github.com/kun-g/solana-notes#readme"
+}
