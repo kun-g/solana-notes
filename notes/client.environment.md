@@ -11,7 +11,7 @@
 ## Connection
 Connection对象是与合约交互的核心，所有交互都要通过Connection对象完成。[API 文档](https://solana-labs.github.io/solana-web3.js/classes/connection.html)
 
-```
+```JavaScript
 let endpoint = 'https://api.devnet.solana.com'
 let config = {
     commitment: 'finalized',
@@ -61,18 +61,18 @@ conn提供了查询SOL和SPL Token流通量的接口：getSupply/getTokenSupply.
     console.log("Serum供应量", res.value.uiAmount)
 ```
 
-有两个点值得注意：
-1, 我在显示流通量数据时，除以了10e9。
+有两个值得注意的点
+### 显示流通量数据时为何除以10e9
 
 这是因为SOL的精度是小数位9位，而链上的数据都是整数，所以显示时要做一下转换。
 
-2, SRM的公钥这么一长串，非常的不友好，有没有更好的管理方法？
+### SRM的公钥这么一长串，非常的不友好，有没有更好的管理方法？
 
-答案是有的，Solana社区维护了一个Token List，地址：
-
-https://github.com/solana-labs/token-list
+答案是有的，Solana社区维护了一个[Token List](https://github.com/solana-labs/token-list)
 
 该数据库里有Solana链上主流Token的地址、精度和名称等信息。可以基于这些信息封装一个更友善的Token管理库。
+
+另外，如果是自己开发的Token，想在区块浏览器里正常显示，也是需要到这里提交PR的。
 
 
 
