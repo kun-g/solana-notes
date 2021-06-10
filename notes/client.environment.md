@@ -63,9 +63,11 @@ conn提供了查询SOL和SPL Token流通量的接口：getSupply/getTokenSupply.
 
 有两个点值得注意：
 1. 我在显示流通量数据时，除以了10e9。
+
 这是因为SOL的精度是小数位9位，而链上的数据都是整数，所以显示时要做一下转换。
 
 2. SRM的公钥这么一长串，非常的不友好，有没有更好的管理方法？
+
 答案是有的，Solana社区维护了一个Token List，地址：
 https://github.com/solana-labs/token-list
 该数据库里有Solana链上主流Token的地址、精度和名称等信息。可以基于这些信息封装一个更友善的Token管理库。
@@ -73,4 +75,4 @@ https://github.com/solana-labs/token-list
 
 
 代码地址：
-
+https://github.com/kun-g/solana-notes
