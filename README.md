@@ -1,7 +1,7 @@
-
 # Solana 科学家笔记
 
 * [客户端环境搭建，基础的查询操作](./notes/client.environment.md) [代码](./code/client.environment.js')
+* [Raydium笔记](./notes/raydium.notes.md)
 * 钱包的生成和管理，转账操作
 * 实践：批量生成钱包、分发、归集
 * 优化：提高转账效率，方法1

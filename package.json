@@ -7,9 +7,9 @@
     "@solana/spl-token": "^0.1.5",
     "@solana/web3.js": "^1.17.0",
     "axios": "^0.21.1",
-    "bignumber.js": "^9.0.1"
+    "bignumber.js": "^9.0.1",
+    "swallet": "github:kun-g/swallet"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
